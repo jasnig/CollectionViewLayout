@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B0A187D1D0E6CA6000CBA4C /* LineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0A187C1D0E6CA6000CBA4C /* LineLayout.swift */; };
+		4B0F822A1D0D6EBC00FCA6A3 /* CirCleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0F82291D0D6EBC00FCA6A3 /* CirCleLayout.swift */; };
 		4B10F56D1D0AAA4500226BFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B10F56C1D0AAA4500226BFC /* AppDelegate.swift */; };
 		4B10F56F1D0AAA4500226BFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B10F56E1D0AAA4500226BFC /* ViewController.swift */; };
 		4B10F5721D0AAA4500226BFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B10F5701D0AAA4500226BFC /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		4B10F5771D0AAA4500226BFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B10F5751D0AAA4500226BFC /* LaunchScreen.storyboard */; };
 		4B10F5821D0AAA4500226BFC /* ColloectionLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B10F5811D0AAA4500226BFC /* ColloectionLayoutTests.swift */; };
 		4B10F58D1D0AAA4500226BFC /* ColloectionLayoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B10F58C1D0AAA4500226BFC /* ColloectionLayoutUITests.swift */; };
+		4B10F59B1D0C308100226BFC /* WaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B10F59A1D0C308100226BFC /* WaterFallLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B0A187C1D0E6CA6000CBA4C /* LineLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayout.swift; sourceTree = "<group>"; };
+		4B0F82291D0D6EBC00FCA6A3 /* CirCleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleLayout.swift; sourceTree = "<group>"; };
 		4B10F5691D0AAA4500226BFC /* ColloectionLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColloectionLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B10F56C1D0AAA4500226BFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B10F56E1D0AAA4500226BFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		4B10F5881D0AAA4500226BFC /* ColloectionLayoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColloectionLayoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B10F58C1D0AAA4500226BFC /* ColloectionLayoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColloectionLayoutUITests.swift; sourceTree = "<group>"; };
 		4B10F58E1D0AAA4500226BFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B10F59A1D0C308100226BFC /* WaterFallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterFallLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 			children = (
 				4B10F56C1D0AAA4500226BFC /* AppDelegate.swift */,
 				4B10F56E1D0AAA4500226BFC /* ViewController.swift */,
+				4B0A187C1D0E6CA6000CBA4C /* LineLayout.swift */,
+				4B10F59A1D0C308100226BFC /* WaterFallLayout.swift */,
+				4B0F82291D0D6EBC00FCA6A3 /* CirCleLayout.swift */,
 				4B10F5701D0AAA4500226BFC /* Main.storyboard */,
 				4B10F5731D0AAA4500226BFC /* Assets.xcassets */,
 				4B10F5751D0AAA4500226BFC /* LaunchScreen.storyboard */,
@@ -256,7 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B10F59B1D0C308100226BFC /* WaterFallLayout.swift in Sources */,
+				4B0F822A1D0D6EBC00FCA6A3 /* CirCleLayout.swift in Sources */,
 				4B10F56F1D0AAA4500226BFC /* ViewController.swift in Sources */,
+				4B0A187D1D0E6CA6000CBA4C /* LineLayout.swift in Sources */,
 				4B10F56D1D0AAA4500226BFC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +496,7 @@
 				4B10F5931D0AAA4500226BFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B10F5941D0AAA4500226BFC /* Build configuration list for PBXNativeTarget "ColloectionLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +505,7 @@
 				4B10F5961D0AAA4500226BFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B10F5971D0AAA4500226BFC /* Build configuration list for PBXNativeTarget "ColloectionLayoutUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +514,7 @@
 				4B10F5991D0AAA4500226BFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
