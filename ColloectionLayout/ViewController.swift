@@ -10,7 +10,7 @@ import UIKit
 
 
 class ViewController: UICollectionViewController {
-    var cellCount = 10
+    var cellCount = 50
     
     private lazy var cellHeight:[CGFloat] = {
         var arr:[CGFloat] = []
@@ -21,22 +21,23 @@ class ViewController: UICollectionViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.backgroundColor = UIColor.redColor()
+        
+        collectionView?.backgroundColor = UIColor.red()
         print(cellHeight)
         // 瀑布流
-//        setWaterFallLayout()
+        setWaterFallLayout()
         // 圆形
-        setCircleLayout()
+//        setCircleLayout()
         // 线性
 //        setLineLayout()
     }
     
     func setLineLayout() {
-        
         let layout = LineLayout()
         layout.itemSize = CGSize(width: 100.0, height: 100.0)
         collectionView?.collectionViewLayout = layout
     }
+    
     
     func setCircleLayout() {
         let layout = CircleLayout()
@@ -61,40 +62,41 @@ class ViewController: UICollectionViewController {
 }
 
 extension ViewController: WaterFallLayoutDelegate {
-    func heightForItemAtIndexPath(indexPath: NSIndexPath) -> CGFloat {
+    func heightForItemAtIndexPath(indexPath: IndexPath) -> CGFloat {
         return cellHeight[indexPath.row]
     }
 }
 
 extension ViewController {
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cellCount
     }
-    
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellID", forIndexPath: indexPath)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
         return cell
     }
     
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row % 2 == 0 {//偶数
             cellCount -= 1
-            cellHeight.removeAtIndex(indexPath.row)
+            cellHeight.remove(at: indexPath.row)
             collectionView.performBatchUpdates({
-                collectionView.deleteItemsAtIndexPaths([indexPath])
+                collectionView.deleteItems(at: [indexPath])
                 }, completion: nil)
         } else {
             cellCount += 1
             cellHeight.append(CGFloat(arc4random() % 150 + 40))
             
             collectionView.performBatchUpdates({
-                collectionView.insertItemsAtIndexPaths([indexPath])
-                }, completion: nil)
+                collectionView.insertItems(at: [indexPath])
+            }, completion: nil)
         }
     }
+    
+
 }
 

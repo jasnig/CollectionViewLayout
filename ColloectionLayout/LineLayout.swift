@@ -30,17 +30,17 @@ import UIKit
 
 
 class LineLayout: UICollectionViewFlowLayout {
-    
+    // 用来缓存布局
     private var layoutAttributes: [UICollectionViewLayoutAttributes] = []
-    override func prepareLayout() {
-        super.prepareLayout()
-        scrollDirection = .Horizontal
+    override func prepare() {
+        super.prepare()
+        scrollDirection = .horizontal
         
     }
     
-    override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         layoutAttributes = []
-        let superLayoutAttributes = super.layoutAttributesForElementsInRect(rect)!
+        let superLayoutAttributes = super.layoutAttributesForElements(in: rect)!
         
         let collectionViewCenterX = collectionView!.bounds.width * 0.5
         
@@ -55,7 +55,7 @@ class LineLayout: UICollectionViewFlowLayout {
             // 计算屏幕内的cell的transform
             if deltaX < collectionView!.bounds.width {
                 let scale = 1.0 -  deltaX / collectionViewCenterX
-                copyLayout.transform = CGAffineTransformMakeScale(scale, scale)
+                copyLayout.transform = CGAffineTransform(scaleX: scale, y: scale)
             }
             
             layoutAttributes.append(copyLayout)
@@ -66,7 +66,7 @@ class LineLayout: UICollectionViewFlowLayout {
      * collectionView检测到 'dirty'标记时会在下一个周期中更新布局
      * 滚动的时候实时更新布局
      */
-    override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
     
