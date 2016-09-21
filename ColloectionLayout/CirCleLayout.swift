@@ -79,7 +79,7 @@ class CircleLayout: UICollectionViewLayout {
         return layoutAttributes
     }
     
-    override func collectionViewContentSize() -> CGSize {
+    override var collectionViewContentSize: CGSize { // change func to var
         return collectionView!.bounds.size
     }
 }
