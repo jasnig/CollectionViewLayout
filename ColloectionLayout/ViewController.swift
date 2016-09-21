@@ -12,7 +12,7 @@ import UIKit
 class ViewController: UICollectionViewController {
     var cellCount = 50
     
-    private lazy var cellHeight:[CGFloat] = {
+    public lazy var cellHeight:[CGFloat] = { //changed private to public
         var arr:[CGFloat] = []
         for _ in 0..<self.cellCount {
             arr.append(CGFloat(arc4random() % 150 + 40))
@@ -22,12 +22,12 @@ class ViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView?.backgroundColor = UIColor.red()
+        collectionView?.backgroundColor = UIColor.red //deleted ()
         print(cellHeight)
         // 瀑布流
-        setWaterFallLayout()
+      //  setWaterFallLayout()
         // 圆形
-//        setCircleLayout()
+       setCircleLayout()
         // 线性
 //        setLineLayout()
     }

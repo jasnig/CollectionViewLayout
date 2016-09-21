@@ -64,7 +64,7 @@ class WaterFallLayout: UICollectionViewLayout {
         super.prepare()
         layoutAttributes = computeLayoutAttributes()
         // 设置为当前屏幕的宽度
-        oldScreenWidth = UIScreen.main().bounds.width
+        oldScreenWidth = UIScreen.main.bounds.width //deleted ()
     }
     
     // Apple建议要重写这个方法, 因为某些情况下(delete insert...)系统可能需要调用这个方法来布局
@@ -81,7 +81,8 @@ class WaterFallLayout: UICollectionViewLayout {
     }
     
     // 返回collectionView的ContentSize -> 滚动范围
-    override func collectionViewContentSize() -> CGSize {
+    //changed this -> override func collectionViewContentSize() -> CGSize to this->
+    override var collectionViewContentSize:  CGSize {
         let maxY = maxYOfColums.max()!
         return CGSize(width: 0.0, height: maxY)
     }
